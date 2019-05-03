@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>최종과제</title>
+    <link rel="stylesheet" href="/stylesheets/201814129_4.css"/>
+    <style media="screen">
+	h1{
+	text-shadow:3px 3px 5px white;
+}
+    </style>
+
+</head>
+<body id="bodies" onload="datefunction(); setInterval(change_image(),1000); setInterval(change_image2(),2000)">
+<!-- ........................................................................................................................................header........................................................................................... -->
+  <header>
+    <p class="hello">&nbsp 201814129 임우찬</p>
+        <center><h1 id="h11">&lt; 편안한 숙면 &gt;</h1><center>
+        <p id="dates" >...</p>
+
+  </header>
+  <!-- ........................................................................................................................................nav........................................................................................... -->
+  <nav>
+    <div class="navs">
+
+        <input type="image" src="/images/homebtn.PNG" id="homebtn" onclick="nav1()">
+        <input type="image" src="/images/minigamebtn.PNG" id="minigamebtn" onclick="nav2()">
+
+    </div>
+  </nav>
+
+<!-- ........................................................................................................................................section........................................................................................... -->
+<section id="articles">
+  <div id="secdiv">
+    <figure><center>
+        <img src="http://file.newswire.co.kr/data/datafile2/thumb_480/2017/09/1794418642_20170911091555_1403296268.jpg" id="imgs"/>
+        <figcaption>남자가 편히 숙면을 취하고있다.</figcaption></center>
+    </figure>
+<div style="margin-left:10px;">
+    <h3><i>478호흡법</i></h3>
+    <ol>
+        <li>코만 사용해서 4초동안 숨을 들이마쉽니다.</li>
+        <li>7초동안 숨을 참아줍니다.</li>
+        <li>마지막으로 8초동안 입으로 숨을 내쉽니다.</li>
+    </ol>
+    <br />
+    <h3><i>숙면에 좋은 음식들</i></h3>
+
+    <ul>
+        <li>키위</li>
+        <li>체리</li>
+        <li>바나나</li>
+        <li>상추</li>
+    </ul>
+  </div>
+    <div id="divv">
+    <table border="1" id="table_width">
+        <caption><strong><i>숙면에 좋은/좋지 않은 음식들</i></strong></caption>
+        <tr>
+            <td rowspan="4" class="hi">숙면에 좋은 음식들</td>
+            <td id="kiwi" onmouseover="kiwi()" onmouseout ="onmouseouts()">키위</td>
+        </tr>
+        <tr><td onmouseover="cherry()" onmouseout="onmouseouts()">체리</td></tr>
+        <tr><td onmouseover="banana()" onmouseout="onmouseouts()">바나나</td></tr>
+        <tr><td onmouseover="lettuce()" onmouseout="onmouseouts()">상추</td></tr>
+        <tr>
+            <td rowspan="4" class="hi">숙면에 좋지 않은 음식들</td>
+            <td onmouseover="tomato()" onmouseout="onmouseouts()">토마토</td>
+        </tr>
+
+        <tr><td onmouseover="brocoly()" onmouseout="onmouseouts()">브로콜리</td></tr>
+        <tr><td onmouseover="meat()" onmouseout="onmouseouts()">고기</td></tr>
+    </table>
+
+      <img id="foods" src="https://lh3.googleusercontent.com/Hk5pidqmIro_zkTVLB-f6o_0RtcO8x0T0Ch00ZpkSXcteXieIz49FaO4iKPtDnjAM4c=w720-h310" alt="흰 화면">
+      <textarea id="textareaa" readonly></textarea>
+    </div>
+
+  </div>
+  </section>
+
+  <!-- ........................................................................................................................................aside........................................................................................... -->
+  <aside class="banner">
+    <div id="goQuiz" onclick="Bannerstart()" onmouseover="smilee()" onmouseout="smileout()">
+      과제
+      <ul>
+        <li><a href="201814129_1.html">과제 1</a></li><li> <a href="201814129_2.html">과제 2</a> </li><li><a href="201814129_3.html">과제 3</a> </li> </ul>      <canvas id="canvas" width="200" height="300"></canvas>
+    </div>
+
+  </aside>
+<!-- ........................................................................................................................................footer........................................................................................... -->
+  <footer>
+    <a href="https://blog.naver.com/chacha5335/221166078188" target="_blank"> 참고자료 1</a>
+    <a href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=16459952&memberNo=2112650&vType=VERTICAL" target="_blank"> 참고자료 2</a>
+
+  </footer>
+<!-- ........................................................................................................................................스크립트 시작................................................................................................................. -->
+    <script type="text/javascript">
+      document.getElementById("bodies").style.background = "white";
+
+/* ----------------------------------------------------------------------------------------------------------------------------------onmouseover함수 선언----------------------------------------------------------------------------------------------------- */
+
+      function kiwi(){
+        document.getElementById('foods').src = "https://media.mercola.com/assets/images/foodfacts/kiwifruit-nutrition-facts.jpg";
+        document.getElementById('textareaa').value = " 숙면에 좋은 음식으로, 심근병증 즉 내피세포 기능이 이상이 있는 사람에게서 비타민 C정맥 주사 했더니 혈관의 단면적이 11/15% 증가하였고,평균 혈류 속도가 무려 41%까지 증가했다고 합니다.칼슘과 마그네슘이 풍부해서 신경을 안정시켜주는 효과가 있습니다.신경이 안정되면 마음도 편안해지고 또 숙면을 취하기도 좋죠.";
+      }
+      function cherry(){
+        document.getElementById('foods').src = "http://image.news1.kr/system/photos/2017/8/25/2697423/article.jpg";
+        document.getElementById('textareaa').value = "멜라토닌이라는 성분이 다량 함유되어있어 뇌에서 분비되는 호르몬을 생체리듬을 조절시키는 역할을 한다. 우리나라 말로는 버찌라고 부른다. 다른 과일에서와 달리 눈에 띄는 체리의 효과는 숙면을 취하는 데 도움이 된다는 것. 체리의 빨간 색소인 프로안토시아니딘이 숙면에 긍정적인 영향을 주기 때문이다. 이로 인해 숙면으로 이끄는 트립토판이 체내에 늘어나게 되며 수면과 각성의 사이클을 일정하게 조절하는 멜라토닌 또한 체리에 함유되어 불면증을 호전시킨다. 따라서 하루 두 잔 정도 체리 주스를 마시는 것만으로 불면증을 해소하고 숙면을 취할 수 있다는 연구 결과도 보고되었다. 한편 체리의 깜짝 영양소는 철분이다. 사과와 딸기보다 많이 함유되어 빈혈 해소에 필수 영양소인 헤모글로빈 생성에 효과를 발휘한다.";
+      }
+      function banana(){
+        document.getElementById('foods').src = "https://s-i.huffpost.com/gen/2163882/images/n-BANANA-628x314.jpg";
+        document.getElementById('textareaa').value = "세라토닌이라는 수면유도 성분을 생성하는데 도움을 준다. 마그네슘이 풍부하게 들어가있어 밤잠을 잘 이루지 못하는 분들에게 효과가 좋다. 환절기의 면역력도 키워준다. 또한 바나나는 마그네슘과 미네랄이 엄청 풍부하여 근육 이완을 도와준다고 한다. 칼륨도 많아서 뇌에 휴식이 들어갈 수 있게 도와준다고 한다.";
+      }
+      function lettuce(){
+        document.getElementById('foods').src = "http://img.danawa.com/prod_img/500000/435/787/img/3787435_1.jpg?shrink=500:500&_v=20170912090441";
+        document.getElementById('textareaa').value = "신진대사를 도와줘 피로회복에 좋다. 긴장을 완화시켜주고 미네랄도 풍부하다. 피를 맑게 해주는 효능도 있어 숙취 해소에도 좋다. 음주 후 두통 해소에도 좋다. 상추 줄기부분에 상처를 내면 흰색의 액체가 분비되는데, 이 흰색 액체에 진정작용과 수면을 불러오는 성분이 함유되어 있어 졸음을 불러일으킨다고 한다.";
+      }
+      function tomato(){
+        document.getElementById('foods').src = "http://hqcenter.snu.ac.kr/hp/wp-content/uploads/%ED%86%A0%EB%A7%88%ED%86%A0%ED%95%98%EB%A9%B4-%EB%B9%A0%EC%A7%88-%EC%88%98-%EC%97%86%EB%8A%94-%EB%9D%BC%EC%9D%B4%EC%BD%94%ED%8E%9C.png";
+        document.getElementById('textareaa').value = "비타민과 무기질 공급원으로, 항산화 물질을 함유하고 있고 뇌졸중 · 심근경색 예방에 도움이 되나, 산도가 높은 토마토의 경우는 위산의 분비를 활발하게 만들어 속쓰림 현상을 동반한다. 잠들기 4시간 전에는 섭취하는 것이 좋으며 다량으로 먹게되면 역류성 식도염 증상까지 나타날 수 있으니 주의하는 것이 좋다.";
+      }
+      function brocoly(){
+        document.getElementById('foods').src = "https://t1.daumcdn.net/cfile/tistory/24465A3C57634D5931";
+        document.getElementById('textareaa').value = "슈퍼푸드로 손꼽힐 정도로 영양가가 풍부한 브로콜리는 피로물질이 과도하게 분비되지 않도록 조절하는 역할을 합니다. 게다가 면역력을 높여주는 비타민C와 클로로필이 함유되어 있기 때문에 피로회복에 도움이 되죠. 끓는 물에 소금을 약간 넣고 1분간 데쳐 먹으면 비타민 손실을 줄이고 맛있게 먹을 수 있습니다.하지만, 식이섬유가 많이 들어있어 잠이 오는 것을 방해할 수 있다. 식이섬유는 소화가 느리게 되는데, 식이섬유를 소화하는 동안 소화기관이 계속 활동하면 숙면을 취하기 어려울 수 있기 때문이다.";
+      }
+      function meat(){
+        document.getElementById('foods').src = "http://octaminox.com/wp/wp-content/uploads/2014/07/Untitled-1.jpg";
+        document.getElementById('textareaa').value = "소고기, 돼지고기 등 붉은 고기뿐 아니라 닭고기, 칠면조 등 흰 살코기 모두 해당하는 얘기다. 단백질 함량이 높은 고기는 소화하는 데 시간이 오래 걸리기 때문에 당신이 자는 동안에도 장운동이 계속된다. 잠들기 전 먹은 치킨이 당신의 숙면을 망칠 수 있다.";
+      }
+      function onmouseouts(){
+        document.getElementById('foods').src = "https://lh3.googleusercontent.com/Hk5pidqmIro_zkTVLB-f6o_0RtcO8x0T0Ch00ZpkSXcteXieIz49FaO4iKPtDnjAM4c=w720-h310";
+        document.getElementById('textareaa').value="";
+      }
+
+/* -------------------------------------------------------------------------------------------------------------------------Date 함수---------------------------------------------------------------------------------------- */
+      function datefunction(){
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth()+1;
+      var day = now.getDay();
+      var date = now.getDate();
+      var hour = now.getHours();
+      var minute = now.getMinutes();
+      var second = now.getSeconds();
+      var day_name = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+
+      hour = mk_zero(hour);
+      minute = mk_zero(minute);
+      second = mk_zero(second);
+
+        document.getElementById("dates").innerText = year+"년"+month+"월"+date+"일"+day_name[day]+hour+"시"+minute+"분"+second+"초";
+        var timereload = setTimeout(function(){datefunction()},1000);
+  }
+  function mk_zero(i){
+    if(i<10){i="0"+i};
+    return i;
+  }
+  /* -------------------------------------------------------------------------------------------------------------------------버튼들 함수---------------------------------------------------------------------------------------- */
+  function nav1(){
+    location.href="/";
+  }
+  function nav2(){
+    location.href="/sleep_minigame";
+  }
+/* -------------------------------------------------------------------------------------------------------------------------Banner 함수---------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------canvas 함수---------------------------------------------------------------------------------------- */
+      var canvas;
+      var smile;
+    function smilee(){
+      canvas = document.getElementById('canvas');
+      smile = canvas.getContext("2d");
+
+      smile.beginPath();
+      smile.arc(90,100,50,0,360);
+      smile.stroke();
+      smile.moveTo(66,80);
+      smile.arc(60,80,7,0,360);
+      smile.stroke();
+      smile.moveTo(126,80);
+      smile.arc(120,80,7,0,360);
+      smile.stroke();
+      smile.moveTo(120,110);
+      smile.arc(90,110,30,Math.PI*2,Math.PI*1,false);
+      smile.stroke();
+    }
+
+    function smileout(){
+      canvas = document.getElementById('canvas');
+      smile = canvas.getContext("2d");
+      smile.beginPath();
+      smile.moveTo(100,100);
+      smile.lineTo(100,101);
+    }
+/* -------------------------------------------------------------------------------------------------------------------------바꾼거 함수---------------------------------------------------------------------------------------- */
+  document.getElementById('h11').style.color="white";
+    </script>
+</body>
+
+</html>
