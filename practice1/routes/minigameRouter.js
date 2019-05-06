@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/sleep_minigame', function(req, res, next) {
-  res.render('/pages/sleep_minigame',{title:minigame});
+  console.log('일단들어왔어요');
+  res.render('/pages/sleep_minigame.html',{title:minigame});
 });
 
 module.exports = router;
