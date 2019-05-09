@@ -9,7 +9,8 @@ router.get('/',(res,req,next)=>{
 });
 router.get('/', function(req, res, next) {
   console.log('미니게임라우터 들어옴');
-  res.render('/pages/sleep_minigame.html');
+  res.sendFile('/Users/dlaxo/express/practice1/public/pages/sleep_minigame.html');
+  
 });
 
 module.exports = router;
