@@ -1,37 +1,14 @@
-'use strict';
+const path = require('path');//path 모듈
+const Sequelize = require('sequelize'); //시퀄라이즈 모듈
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const env = process.env.NODE_ENV||'development';//환경변수이다. 개발용일경우 'development', 배포용일경우 'production'으로 쓴다. 패키지의 설정이 바뀐다.
+const config = require('..config/config.json')[env];//시퀄라이즈에 대한 설정 파일을 불러오는 코드이다.
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config); //이 Sequelize는 사실 생성자이다. 이를 인스턴스화한다. 이 구조는 외우도록 한다.
+
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
-
-fs
-  .readdirSync(__dirname)
-  .filter(file => {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
-  .forEach(file => {
-    const model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
-
-db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
 module.exports = db;
