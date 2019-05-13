@@ -13,36 +13,36 @@ router.get('/',(req, res, next)=> {
   
   
 });
-router.get('sleep_minigame/kiwi',(res,req,next)=>{
+router.get('/kiwi',(res,req,next)=>{
   console.log('라우터_키위 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_kiwi.html');
 });
-router.get('sleep_minigame/cherry',(res,req,next)=>{
+router.get('/cherry',(res,req,next)=>{
   console.log('라우터_체리 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_cherry.html');
   
 });
-router.get('sleep_minigame/banana',(res,req,next)=>{
+router.get('/banana',(res,req,next)=>{
   console.log('라우터_바나나 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_banana.html');
  
 });
-router.get('sleep_minigame/lettuce',(res,req,next)=>{
+router.get('/lettuce',(res,req,next)=>{
   console.log('라우터_상추 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_lettuce.html');
   
 });
-router.get('sleep_minigame/tomato',(res,req,next)=>{
+router.get('/tomato',(res,req,next)=>{
   console.log('라우터_토마토 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_tomato.html');
   
 });
-router.get('sleep_minigame/brocoly',(res,req,next)=>{
+router.get('/brocoly',(res,req,next)=>{
   console.log('라우터_브로콜리 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_brocoly.html');
  
 });
-router.get('/sleep_minigame/meat',(res,req,next)=>{
+router.get('/meat',(res,req,next)=>{
   console.log('라우터_고기 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/quiz_meat.html');
 
