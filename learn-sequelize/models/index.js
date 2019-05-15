@@ -1,5 +1,5 @@
-const path = require('path');//path 모듈
-const Sequelize = require('sequelize');//시퀄라이즈 모듈
+const path = require('path');//path 모듈이다.
+const Sequelize = require('sequelize');//시퀄라이즈 모듈이다.
 
 const env = process.env.NODE_ENV||'development';
 const config = require('../config/config.json')[env];
