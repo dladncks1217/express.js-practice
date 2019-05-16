@@ -1,14 +1,18 @@
 modules.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
         commenter:{
-
+            type:DataTypes.STRING(20),
+            allowNull:false,
         },
         comment:{
-
+            type:DataTypes.STRING(100),
+            allowNULL:false,
         },
         created_at:{
-
-        }
+            type:DataTypes.DATE,
+            allowNULL:false,
+            defaultValue:sequelize.literal('now()'),
+        },
     }, {
         timestamps:false,
         underscored:true,
