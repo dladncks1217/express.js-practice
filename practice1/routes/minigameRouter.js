@@ -11,7 +11,6 @@ router.get('/',(req, res, next)=> {
   console.log('미니게임라우터 들어옴');
   res.sendFile('/Users/dlaxo/express/practice1/public/pages/sleep_minigame.html');
   
-  
 });
 router.get('/kiwi',(res,req,next)=>{
   console.log('라우터_키위 들어옴');
