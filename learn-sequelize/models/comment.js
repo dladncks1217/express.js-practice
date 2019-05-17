@@ -3,6 +3,7 @@ modules.exports = (sequelize,DataTypes)=>{
         commenter:{
             type:DataTypes.STRING(20),
             allowNull:false,
+            unique:true,
         },
         comment:{
             type:DataTypes.STRING(100),
