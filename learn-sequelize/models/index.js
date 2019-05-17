@@ -13,7 +13,7 @@ db.Sequelize = sequelize;//db객체에 시퀄라이즈 인스턴스를 넣는다
 db.User = require('./user')(sequelize,Sequelize);
 db.Comment = require('./comment')(sequelize,Sequelize);
 
-db.User.hasMany(db.Comment);
-db.Comment.belongsTo(db.User);
+db.User.hasMany(db.Comment,{foreignKey:'commenter',sourceKey:'id'});
+db.Comment.belongsTo(db.User,{foreignKey:'commenter', targetKey:'id'});
 
 module.exports = db;
