@@ -1,10 +1,5 @@
 modules.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
-        commenter:{
-            type:DataTypes.STRING(20),
-            allowNull:false,
-            unique:true,
-        },
         comment:{
             type:DataTypes.STRING(100),
             allowNULL:false,
