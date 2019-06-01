@@ -1,4 +1,4 @@
-modules.exports = (sequelize,DataTypes)=>{
+module.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
         comment:{
             type:DataTypes.STRING(100),

@@ -1,4 +1,4 @@
-modules.exports = (sequelize,DataTypes)=>{
+module.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
         name:{
             type:DataTypes.STRING(20),
@@ -6,7 +6,7 @@ modules.exports = (sequelize,DataTypes)=>{
             unique:true,
         },
         age:{
-            type:DataTypes.INTEGER.UNSINGED,
+            type:DataTypes.INTEGER.UNSIGNED,
             allowNULL:false,
         },
         married:{
