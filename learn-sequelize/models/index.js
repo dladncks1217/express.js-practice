@@ -8,7 +8,7 @@ const sequelize = new Sequelize(config.database, config.username,config.password
 //이 시퀄라이즈가 사실 생성자다. 이를 인스턴스화하는 코드이다. 구조는 그냥 외우자.
 const db = {}; //db객체이다.(이 객체를 앞으로 모듈화 해 사용 할 것이다.)
 db.Sequelize = Sequelize;//db객체에 시퀄라이즈 패키지를 넣는다.
-db.Sequelize = sequelize;//db객체에 시퀄라이즈 인스턴스를 넣는다.
+db.sequelize = sequelize;//db객체에 시퀄라이즈 인스턴스를 넣는다.
 
 db.User = require('./user')(sequelize,Sequelize);
 db.Comment = require('./comment')(sequelize,Sequelize);
