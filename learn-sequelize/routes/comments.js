@@ -1,17 +1,20 @@
 const express = require('express');
 const router = express.Router();
+//GET/comments/:id
+router.get('/:id',(req,res,next)=>{
 
-router.get('/',(req,res,next)=>{
-
-
-});
-router.post('/'(req,res,next)=>{
 
 });
-router.patch('/',(req,res,next)=>{
+//PATCH/comments/:id
+router.patch('/:id',(req,res,next)=>{
 
 });
-router.delete('/',(req,res,next)=>{
+//DELETE/comments/:id
+router.delete('/:id',(req,res,next)=>{
+
+});
+//POST/comments
+router.post('/',(req,res,next)=>{
 
 });
 
