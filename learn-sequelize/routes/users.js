@@ -14,7 +14,19 @@ router.get('/', (req, res, next)=>{
   })
 });
 router.post('/',(req,res,next)=>{
-
+    User.create({
+        name:'',
+        age:'',
+        married:'',
+    })
+    .then((result)=>{
+        console.log(result);
+        res.status(201).json(result);
+    })
+    .catch((err)=>{
+        console.error(err);
+        next(err);
+    })
 });
 
 module.exports = router;
