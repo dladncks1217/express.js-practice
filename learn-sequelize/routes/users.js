@@ -15,9 +15,9 @@ router.get('/', (req, res, next)=>{
 });
 router.post('/',(req,res,next)=>{
     User.create({
-        name:req.body.name,
-        age:req.body.age,
-        married:req.body.married,
+        name: req.body.name,
+        age: req.body.age,
+        married: req.body.married,
     })
     .then((result)=>{
         console.log(result);
