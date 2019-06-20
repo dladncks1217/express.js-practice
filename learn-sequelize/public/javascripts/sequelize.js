@@ -4,8 +4,8 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
       var id = el.querySelector('td').textContent;
       getComment(id);
     });
-  });
-  // 사용자 로딩
+  }); 
+  //  사용자 로딩
   function getUser() {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -137,7 +137,7 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
     e.target.age.value = '';
     e.target.married.checked = false;
   });
-  // 댓글 등록 시
+  // 댓글 등록 시 
   document.getElementById('comment-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var id = e.target.userid.value;
@@ -155,11 +155,12 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
         getComment(id);
       } else {
         console.error(xhr.responseText);
-      }
-    };
+      } 
+    }; 
     xhr.open('POST', '/comments');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({ id: id, comment: comment }));
     e.target.userid.value = '';
     e.target.comment.value = '';
   });
+  
