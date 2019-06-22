@@ -8,7 +8,6 @@ const usersRouter = require('./routes/users');
 const commentsRouter = require('./routes/comments');
 const {sequelize} = require('./models');
 
-
 const app = express();
 sequelize.sync();
 
