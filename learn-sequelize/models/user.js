@@ -17,14 +17,13 @@ module.exports = (sequelize,DataTypes)=>{
             type:DataTypes.TEXT,
             allowNULL:true,
         },
-        created:{
+        created_at:{
             type:DataTypes.DATE,
             allowNULL:false,
             defaultValue:sequelize.literal('now()'),
         },
     },{
         timestamps:false,
-        underscored:false,
     });
 };
 //user테이블
