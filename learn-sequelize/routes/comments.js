@@ -51,7 +51,6 @@ router.delete('/:id',(req,res,next)=>{
 //POST/comments
 router.post('/',(req,res,next)=>{
     Comment.create({
-        commenter:'req.body.id',
         comment:req.body.comment,
         created_at:req.body.created_at,
     })
@@ -62,7 +61,7 @@ router.post('/',(req,res,next)=>{
     .catch((err)=>{
         console.error(err);
         next(err);
-    })
+    });
 });
 
 module.exports = router;

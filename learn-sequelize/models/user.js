@@ -21,7 +21,6 @@ module.exports = (sequelize,DataTypes)=>{
             type:DataTypes.DATE,
             allowNULL:false,
             defaultValue:sequelize.literal('now()'),
-
         },
     },{
         timestamps:false,

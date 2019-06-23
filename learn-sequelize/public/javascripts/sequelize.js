@@ -113,7 +113,7 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
   document.getElementById('user-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var name = e.target.username.value;
-    var age = e.target.age.value;
+    var age = parseInt(e.target.age.value,10);
     var married = e.target.married.checked;
     if (!name) {
       return alert('이름을 입력하세요');
