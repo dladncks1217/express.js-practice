@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {User, Comment} = require('../models');
 //GET/comments/:id
 router.get('/:id',(req,res,next)=>{
     Comment.findAll()
