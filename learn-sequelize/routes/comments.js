@@ -9,14 +9,14 @@ router.get('/:id',(req,res,next)=>{
             where: {id:req.params.id },
         }
     })
-    .then((comments)=>{
-        console.log(comments);
-        res.json(comments);
-    })
-    .catch((err)=>{
-        console.error(err);
-        next(err);
-    })
+        .then((comments)=>{
+            console.log(comments);
+            res.json(comments);
+        })
+        .catch((err)=>{
+            console.error(err);
+            next(err);
+        })
 });
 //PATCH/comments/:id
 router.patch('/:id',(req,res,next)=>{
@@ -46,13 +46,13 @@ router.delete('/:id',(req,res,next)=>{
         .catch((err)=>{
             console.error(err);
             next(err);
-        })
+        });x
 });
 //POST/comments
 router.post('/',(req,res,next)=>{
     Comment.create({
+        commenter:req.body.id,
         comment:req.body.comment,
-        created_at:req.body.created_at,
     })
     .then((result)=>{
         console.log(result);
