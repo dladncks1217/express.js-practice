@@ -2,11 +2,11 @@ module.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
         comment:{
             type:DataTypes.STRING(100),
-            allowNULL:false,
+            allowNull:false,
         },
         created_at:{
             type:DataTypes.DATE,
-            allowNULL:false,
+            allowNull:false,
             defaultValue:sequelize.literal('now()'),
         },
     }, {

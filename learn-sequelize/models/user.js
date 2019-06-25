@@ -2,24 +2,24 @@ module.exports = (sequelize,DataTypes)=>{
     return sequelize.define('user',{
         name:{
             type:DataTypes.STRING(20),
-            allowNULL:false,
+            allowNull:false,
             unique:true,
         },
         age:{
             type:DataTypes.INTEGER.UNSIGNED,
-            allowNULL:false,
+            allowNull:false,
         },
         married:{
             type:DataTypes.BOOLEAN,
-            allowNULL:false,
+            allowNull:false,
         },
         comment:{
             type:DataTypes.TEXT,
-            allowNULL:true,
+            allowNull:true,
         },
         created_at:{
             type:DataTypes.DATE,
-            allowNULL:false,
+            allowNull:false,
             defaultValue:sequelize.literal('now()'),
         },
     },{
