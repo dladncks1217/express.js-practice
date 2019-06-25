@@ -26,6 +26,7 @@ module.exports = (sequelize,DataTypes)=>{
         timestamps:false,
     });
 };
+
 //user테이블
 //이름, 나이, 결혼여부, 자기소개, 생성일
 //zero, 23, false, 안녕하세요, 2019-05-16
