@@ -11,7 +11,7 @@ router.get('/', (req, res, next)=>{
   .catch((err)=>{
       console.error(err);
       next(err);
-  })
+  });
 });
 router.post('/',(req,res,next)=>{
     User.create({
