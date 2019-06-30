@@ -16,6 +16,7 @@ module.exports = (sequelize,DataTypes)=>{
 };
 
 
+
 //comment테이블
 //작성자, 댓글내용, 작성일
 //zero, 안녕하세요, 2019-05-16
