@@ -17,3 +17,4 @@ db.Comment.belongsTo(db.User,{foreignKey:'commenter', targetKey:'id'});
   
 
 module.exports = db;
+ 
