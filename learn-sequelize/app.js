@@ -16,11 +16,11 @@ sequelize.sync();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(logger('dev')); 
+app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: false })); 
+app.use(cookieParser()); 
 
 
 
@@ -29,8 +29,8 @@ app.use('/users', usersRouter);
 app.use('/comments',commentsRouter);
 
 // 404 에러 핸들러
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use(function(req, res, next) { 
+  next(createError(404)); 
 });
 
 // 에러 핸들러
