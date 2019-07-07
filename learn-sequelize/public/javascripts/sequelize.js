@@ -5,7 +5,7 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
       getComment(id);
     });
   }); 
-  //  사용자 로딩
+  //  사용자 로딩 
   function getUser() {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -61,7 +61,7 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
           row.appendChild(td);
           var edit = document.createElement('button');
           edit.textContent = '수정';
-          edit.addEventListener('click', function () { // 수정 클릭 시
+          edit.addEventListener('click', function () {  // 수정 클릭 시
             var newComment = prompt('바꿀 내용을 입력하세요');
             if (!newComment) {
               return alert('내용을 반드시 입력하셔야 합니다');
