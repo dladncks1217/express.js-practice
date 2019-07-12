@@ -6,4 +6,4 @@ router.get('/', function(req, res, next) {
     res.sendFile('c:\\Users\\dlaxo\\express\\practice-mysql\\views\\index.html');
 });
 
-module.exports = router;
+module.exports = router; 
