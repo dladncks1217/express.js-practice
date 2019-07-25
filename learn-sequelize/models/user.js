@@ -1,5 +1,5 @@
-module.exports = (sequelize,DataTypes)=>{
-    return sequelize.define('user',{
+module.exports = (sequelize,DataTypes)=>(
+    sequelize.define('user',{
         name:{
             type:DataTypes.STRING(20),
             allowNull:false,
@@ -24,8 +24,8 @@ module.exports = (sequelize,DataTypes)=>{
         },
     },{
         timestamps:false,
-    });
-};
+    })
+);
 
 //user테이블
 //이름, 나이, 결혼여부, 자기소개, 생성일

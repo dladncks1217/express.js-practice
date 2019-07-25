@@ -1,5 +1,5 @@
-module.exports = (sequelize,DataTypes)=>{
-    return sequelize.define('user',{
+module.exports = (sequelize,DataTypes)=>(
+    sequelize.define('user',{
         comment:{
             type:DataTypes.STRING(100),
             allowNull:false,
@@ -12,8 +12,8 @@ module.exports = (sequelize,DataTypes)=>{
     }, {
         timestamps:false,
         underscored:true,
-    });
-};
+    })
+);
 
 
 
