@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac5246cc-9f44-40c2-ba24-2934a9242645" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn-express" beforeDir="false" afterPath="$PROJECT_DIR$/learn-express" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn-express/app2.js" beforeDir="false" afterPath="$PROJECT_DIR$/learn-express/app2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice express-session/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice express-session/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice express-session/node_modules/morgan/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice express-session/node_modules/morgan/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice express-session/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice express-session/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice express-session/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice express-session/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,9 +95,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/bootstrap/startbootstrap-creative-gh-pages/index.html" />
-        <option value="$USER_HOME$/bootstrap-practice/practice1.html" />
-        <option value="$USER_HOME$/bootstrap/startbootstrap-creative-gh-pages/practice1.html" />
+        <option value="$PROJECT_DIR$/../bootstrap/startbootstrap-creative-gh-pages/index.html" />
+        <option value="$PROJECT_DIR$/../bootstrap-practice/practice1.html" />
+        <option value="$PROJECT_DIR$/../bootstrap/startbootstrap-creative-gh-pages/practice1.html" />
         <option value="$PROJECT_DIR$/learn-sequelize/models/index.js" />
         <option value="$PROJECT_DIR$/learn-sequelize/routes/index.js" />
         <option value="$PROJECT_DIR$/learn-sequelize/public/javascripts/sequelize.js" />
@@ -113,7 +116,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -125,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,12 +168,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/NodeBird" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NodeBird" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -210,14 +213,15 @@
       <workItem from="1563178635401" duration="66000" />
       <workItem from="1563982238080" duration="12000" />
       <workItem from="1564115881532" duration="20000" />
+      <workItem from="1564116074206" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21125000" />
+    <option name="totallyTimeSpent" value="21723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24917382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -243,15 +247,15 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/bootstrap-practice/practice1.html" />
-    <entry file="file://$USER_HOME$/bootstrap/startbootstrap-creative-gh-pages/index.html">
+    <entry file="file://$PROJECT_DIR$/../bootstrap-practice/practice1.html" />
+    <entry file="file://$PROJECT_DIR$/../bootstrap/startbootstrap-creative-gh-pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="20" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/bootstrap/startbootstrap-creative-gh-pages/practice1.html">
+    <entry file="file://$PROJECT_DIR$/../bootstrap/startbootstrap-creative-gh-pages/practice1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
@@ -271,6 +275,9 @@
           <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice-ajax/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/learn-sequelize/models/user.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -311,9 +318,6 @@
           <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice-ajax/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/practice express-session/app.js">
       <provider selected="true" editor-type-id="text-editor" />
