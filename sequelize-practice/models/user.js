@@ -1,0 +1,19 @@
+module.exports = (sequelize,DataTypes)=>(
+    sequelize.define('user',{
+        name:{
+            type:DataTypes.STRING(20),
+            allowNull:false,
+            unique:false,
+        },
+        age:{
+            type:DataTypes.INTEGER.UNSIGNED,
+            allowNull:false,
+        },
+        birthday:{
+            type:DataTypes.INTEGER.UNSIGNED,
+            allowNull:false,
+        }
+    },{
+        timestamps:false,
+    })
+);
