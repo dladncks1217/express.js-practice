@@ -3,9 +3,14 @@ const path = require('path');
 const indexRouter = require('./routes/index');
 const getPersonRouter = require('./routes/getperson');
 const findPersonRouter = require('./routes/findperson');
-
+const {sequelize} = require('./models');
 
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+sequelize.sync();
 app.use(express.static(path.join(__dirname,'public')));
 
 
