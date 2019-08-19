@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alertifyjs": "^1.11.4",
     "express": "^4.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.1",
