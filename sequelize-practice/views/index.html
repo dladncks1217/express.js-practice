@@ -5,27 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>practice sequelize</title>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.rtl.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.rtl.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
 </head>
 <body>
     <h1>사용자 등록</h1>
-    <form action="/getPerson" method="get">
-        <input type="text" id = "getname">
-        <input type="text" id = "getage">
-        <input type="text" id = "getbirthday">
+    <form action="/getPerson" method="post">
+        이름: <input type="text" id = "getname">
+        나이: <input type="text" id = "getage">
+        생일: <input type="text" id = "getbirthday">
         <input type="submit" value = "등록">
     </form>
 
@@ -34,12 +20,7 @@
         <input type="text" id="findname">
         <input type="submit" value = "찾기">
     </form>
-    <button type="button" name ="button" onclick ="hi()">asdf</button>
-
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js">
+    <button type="button" name ="button" >asdf</button>
     
-        alertify.alert('Ready!');
-   
-    </script>
 </body>
 </html>
