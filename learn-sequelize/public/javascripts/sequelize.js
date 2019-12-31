@@ -42,73 +42,73 @@ document.querySelectorAll('#user-list tr').forEach(function (el) {
   }
   // 댓글 로딩
   function getComment(id) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        var comments = JSON.parse(xhr.responseText);
-        var tbody = document.querySelector('#comment-list tbody');
-        tbody.innerHTML = '';
-        comments.map(function (comment) {
-          var row = document.createElement('tr');
-          var td = document.createElement('td');
-          td.textContent = comment.id;
-          row.appendChild(td);
-          td = document.createElement('td');
-          td.textContent = comment.user.name;
-          row.appendChild(td);
-          td = document.createElement('td');
-          td.textContent = comment.comment;
-          row.appendChild(td);
-          var edit = document.createElement('button');
-          edit.textContent = '수정';
-          edit.addEventListener('click', function () {  // 수정 클릭 시
-            var newComment = prompt('바꿀 내용을 입력하세요');
-            if (!newComment) {
-              return alert('내용을 반드시 입력하셔야 합니다');
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      var comments = JSON.parse(xhr.responseText);
+      var tbody = document.querySelector('#comment-list tbody');
+      tbody.innerHTML = '';
+      comments.map(function (comment) {
+        var row = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = comment.id;
+        row.appendChild(td);
+        td = document.createElement('td');
+        td.textContent = comment.user.name;
+        row.appendChild(td);
+        td = document.createElement('td');
+        td.textContent = comment.comment;
+        row.appendChild(td);
+        var edit = document.createElement('button');
+        edit.textContent = '수정';
+        edit.addEventListener('click', function () {  // 수정 클릭 시
+          var newComment = prompt('바꿀 내용을 입력하세요');
+          if (!newComment) {
+            return alert('내용을 반드시 입력하셔야 합니다');
+          }
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText);
+              getComment(id);
+            } else {
+              console.error(xhr.responseText);
             }
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-              if (xhr.status === 200) {
-                console.log(xhr.responseText);
-                getComment(id);
-              } else {
-                console.error(xhr.responseText);
-              }
-            };
-            xhr.open('PATCH', '/comments/' + comment.id);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({ comment: newComment }));
-          });
-          var remove = document.createElement('button');
-          remove.textContent = '삭제';
-          remove.addEventListener('click', function () { // 삭제 클릭 시
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-              if (xhr.status === 200) {
-                console.log(xhr.responseText);
-                getComment(id);
-              } else {
-                console.error(xhr.responseText);
-              }
-            };
-            xhr.open('DELETE', '/comments/' + comment.id);
-            xhr.send();
-          });
-          td = document.createElement('td');
-          td.appendChild(edit);
-          row.appendChild(td);
-          td = document.createElement('td');
-          td.appendChild(remove);
-          row.appendChild(td);
-          tbody.appendChild(row);
+          };
+          xhr.open('PATCH', '/comments/' + comment.id);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({ comment: newComment }));
         });
-      } else {
-        console.error(xhr.responseText);
-      }
-    };
-    xhr.open('GET', '/comments/' + id);
-    xhr.send();
-  }
+        var remove = document.createElement('button');
+        remove.textContent = '삭제';
+        remove.addEventListener('click', function () { // 삭제 클릭 시
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText);
+              getComment(id);
+            } else {
+              console.error(xhr.responseText);
+            }
+          };
+          xhr.open('DELETE', '/comments/' + comment.id);
+          xhr.send();
+        });
+        td = document.createElement('td');
+        td.appendChild(edit);
+        row.appendChild(td);
+        td = document.createElement('td');
+        td.appendChild(remove);
+        row.appendChild(td);
+        tbody.appendChild(row);
+      });
+    } else {
+      console.error(xhr.responseText);
+    }
+  };
+  xhr.open('GET', '/comments/' + id);
+  xhr.send();
+}
   // 사용자 등록 시
   document.getElementById('user-form').addEventListener('submit', function (e) {
     e.preventDefault();
