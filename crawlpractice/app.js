@@ -12,7 +12,13 @@ const reqOption = {
 };
 
 request.get(reqOption,(err,res,body)=>{
+    const $ = cheerio.load(body);
+    const $use = $("span#ctl00_ContentPlaceHolder1_ctl00_rptList_ctl00_lblTitle").children('a');
     iconv.extendNodeEncodings(); 
-    var strContents = new Buffer(body); 
-    console.log(iconv.decode(strContents,'EUC-KR').toString());
+    const usecontent = new Buffer($use.toString());
+
+    console.log(iconv.decode(usecontent,'EUC-KR').toString());
+  /*  iconv.extendNodeEncodings(); 
+    const strContents = new Buffer(body); 
+    console.log(iconv.decode(strContents,'euckr').toString()); */
 });
