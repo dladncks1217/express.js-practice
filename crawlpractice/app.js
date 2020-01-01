@@ -1,6 +1,9 @@
+/*
 const request = require('request');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
+
+
 
 const reqOption = {
     method:"GET",
@@ -14,11 +17,21 @@ const reqOption = {
 request.get(reqOption,(err,res,body)=>{
     const $ = cheerio.load(body);
     const $use = $("span#ctl00_ContentPlaceHolder1_ctl00_rptList_ctl00_lblTitle").children('a');
-    iconv.extendNodeEncodings(); 
+     iconv.extendNodeEncodings(); 
     const usecontent = new Buffer($use.toString());
-
     console.log(iconv.decode(usecontent,'EUC-KR').toString());
-  /*  iconv.extendNodeEncodings(); 
+
+    iconv.extendNodeEncodings();
     const strContents = new Buffer(body); 
-    console.log(iconv.decode(strContents,'euckr').toString()); */
+    console.log(iconv.decode(strContents,'euckr').toString());
+});
+ */
+
+const client = require('cheerio-httpcli');
+client.fetch("http://www.skhu.ac.kr/board/boardlist.aspx?bsid=10004&searchBun=51", {}, function (err, $, res, body) {
+  const list = $(".left15 #ctl00_ContentPlaceHolder1_ctl00_rptList_ctl00_lblTitle");
+  list.each(function(){
+    let result = $(this).find('a').text();
+    console.log(result);
+  });
 });
