@@ -5,5 +5,4 @@ module.exports = new Promise((resolve)=>{
         const results = list.find('a').text();
         resolve(results);
     });
-
 });
