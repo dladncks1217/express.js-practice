@@ -19,5 +19,5 @@ app.use(express.urlencoded({extended:false}));
 app.use('/',indexRouter);
 
 app.listen(process.env.PORT,()=>{
-    console.log(`${process.env.PORT}번 포트에서 서버 대기중입니다.!`);
+    console.log(`${process.env.PORT}번 포트에서 서버 대기중입니다!`);
 });

@@ -1,14 +1,16 @@
 const client = require('cheerio-httpcli');
-
+const jsdom = require('jsdom');
+const {JSDOM} = jsdom;
+let a = [];
 new Promise((resolve)=>{
-    client.fetch("http://www.skhu.ac.kr/board/boardlist.aspx?bsid=10004&searchBun=51",{},(err,$,res,body)=>{
-        let crawl = $(".left15 #ctl00_ContentPlaceHolder1_ctl00_rptList2_ctl00_lblTitle");
-        let result = crawl.find('a').text();
-        
-        resolve(result);
-        console.log(result);
+    client.fetch("https://www.melon.com/",{},(err,$,res,body)=>{
+    let body1 = $.html();
+    let dom = new JSDOM(body1);
+    let first = dom.window.document.getElementsByClassName('ellipsis mlog')[0].innerHTML;
+    console.log(first);
+    resolve(first);
     })
 }).then((results)=>{
-    module.exports = results;
+    a.push(results);
 })
-
+module.exports = a;
