@@ -8,6 +8,7 @@ new Promise((resolve)=>{
     let dom = new JSDOM(body1);
     let first = dom.window.document.getElementsByClassName('ellipsis mlog')[0].innerHTML;
     console.log(first);
+    
     resolve(first);
     })
 }).then((results)=>{
