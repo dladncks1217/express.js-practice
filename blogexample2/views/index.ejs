@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>이동</button>
+    <script>
+        document.getElementsByTagName('button')[0].addEventListener('click',(e)=>{
+            e.preventDefault();
+            location.href = '/exampled' // 404 Not Found
+        })
+    </script>
+</body>
+</html>
