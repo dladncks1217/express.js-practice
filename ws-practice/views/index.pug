@@ -13,5 +13,5 @@ body
     };
     webSocket.onmessage = function(event){
       console.log(event.data); //socket.js에서 ws.send를 하게되면 서버에서 보낸 정보가 event인자를 통해 들어오게 된다.
-      webSocket.send('클라이언트에서 서버로 답장을 보냅니다.');  //그럼 프론트의 webSocket.send 에서 보낸 것은 socket.js의 ws.on(message)로 들어가게 되는 것이다.
+      webSocket.send('클라이언트에서 서버로 답장을 보냅니다.');  //그럼 프론트의 webSocket.send 에서 보낸 것은 socket.js의 ws.on(message)로 들어가게 되는 것이다
     };   //이런 식으로 프론트와 서버와 양방향 소통을 하게 된다.
