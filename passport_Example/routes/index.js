@@ -47,7 +47,7 @@ router.post('/login',isNotLoggedIn,(req,res,next)=>{
     })(req,res,next);
 })
 
-router.get('/',isLoggedIn,(req,res,next)=>{
+router.get('/logout',isLoggedIn,(req,res,next)=>{
     req.logout();
     req.session.destroy();
     res.status(200).json("로그아웃 완료");
