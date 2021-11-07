@@ -3,16 +3,27 @@ const path = require("path");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const RedisStore = require("redis-connect")(session);
+const RedisStore = require("connect-redis")(session);
 // express-session 사용하기때문에 express-session보다 아래에 있어야 함.
+const passport = require("passport");
+const redis = require("redis");
 
 require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const { sequelize } = require("./models");
+const passportConfig = require("./passport");
+
+const client = redis.createClient({
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT,
+  password: process.env.REDIS_PASSWORD,
+  logErrors: true,
+});
 
 const app = express();
 sequelize.sync();
+passportConfig(passport);
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
@@ -28,14 +39,11 @@ app.use(
       httpOnly: true,
       secure: false,
     },
-    store: new RedisStore({
-      host: process.env.REDIS_HOST,
-      port: process.env.REDIS_PORT,
-      password: process.env.REDIS_PASSWORD,
-      logErrors: true,
-    }),
+    // store: new RedisStore({ client }),
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/", indexRouter);
 
