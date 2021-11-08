@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const RedisStore = require("connect-redis")(session);
-// express-session 사용하기때문에 express-session보다 아래에 있어야 함.
+// connect-redis는 express-session 사용하기때문에 express-session보다 아래에 있어야 함.
 const passport = require("passport");
 const redis = require("redis");
 
@@ -39,7 +39,7 @@ app.use(
       httpOnly: true,
       secure: false,
     },
-    // store: new RedisStore({ client }),
+    store: new RedisStore({ client }),
   })
 );
 app.use(passport.initialize());

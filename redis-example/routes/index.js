@@ -3,19 +3,16 @@ const { User } = require("../models");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+const { isNotLoggedIn, isLoggedIn, loginCheck } = require("./middlewares");
 
 require("dotenv").config();
 
-router.get("/", (req, res, next) => {
-  if (req.isAuthenticated()) {
-    console.log(req.user);
-    res.send(req.user);
-  } else {
-    res.send("로그인 안된상태");
-  }
+router.get("/logincheck", (req, res, next) => {
+  console.log(req.isAuthenticated());
+  return res.send(req.isAuthenticated());
 });
 
-router.post("/join", async (req, res, next) => {
+router.post("/join", isNotLoggedIn, async (req, res, next) => {
   const { email, name, password } = req.body;
   try {
     const exUser = await User.findOne({ where: { email } });
@@ -36,7 +33,7 @@ router.post("/join", async (req, res, next) => {
   }
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/login", isNotLoggedIn, (req, res, next) => {
   passport.authenticate("local", (authError, user, info) => {
     if (authError) {
       console.error(authError);
@@ -55,7 +52,7 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", isLoggedIn, (req, res, next) => {
   req.logout();
   req.session.destroy();
   res.status(200).json("로그아웃 완료");
