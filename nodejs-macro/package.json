@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "console-stamp": "^3.0.4",
+    "dotenv": "^16.0.0",
     "puppeteer": "^13.4.0"
   },
   "devDependencies": {
