@@ -14,4 +14,8 @@ module.exports = (sequelize, DataTypes) =>
       allowNull: false,
       unique: true,
     },
+    role: {
+      type: DataTypes.STRING(15),
+      allowNull: false,
+    },
   });

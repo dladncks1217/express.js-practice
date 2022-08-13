@@ -8,7 +8,7 @@ module.exports = {
     // access token 발급
     const payload = {
       // access token에 들어갈 payload
-      id: user.id,
+      nick: user.nick,
       role: user.role,
     };
 

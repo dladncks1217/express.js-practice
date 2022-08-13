@@ -2,18 +2,24 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const cors = require("cors");
 const indexRouter = require("./routes");
 const authRouter = require("./routes/auth");
 const { sequelize } = require("./models");
+
+const router = express.Router();
 
 require("dotenv").config();
 
 const app = express();
 sequelize.sync();
 
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "ejs");
-
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());

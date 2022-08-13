@@ -1,4 +1,4 @@
-const { verify } = require("../../util/jwt-util");
+const { verify } = require("../../utils/jwt-util");
 
 const authJWT = (req, res, next) => {
   if (req.headers.authorization) {
@@ -6,7 +6,7 @@ const authJWT = (req, res, next) => {
     const result = verify(token); // token을 검증합니다.
     if (result.ok) {
       // token이 검증되었으면 req에 값을 세팅하고, 다음 콜백함수로 갑니다.
-      req.id = result.id;
+      req.nick = result.id;
       req.role = result.role;
       next();
     } else {

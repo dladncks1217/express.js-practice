@@ -4,7 +4,7 @@ const { User } = require("../models");
 const jwt = require("../utils/jwt-util");
 
 router.post("/join", async (req, res, next) => {
-  const { email, nick, password } = req.body;
+  const { email, nick, password, role } = req.body;
   try {
     const exUser = await User.findOne({ where: { email } });
     if (exUser) {
@@ -17,6 +17,7 @@ router.post("/join", async (req, res, next) => {
       email,
       nick,
       password: hash,
+      role,
     });
 
     return res.json(userData);
@@ -29,13 +30,20 @@ router.post("/join", async (req, res, next) => {
 router.post("/login", async (req, res) => {
   //... user 로그인 로직
   const { email, password } = req.body;
+
   const exUser = await User.findOne({ where: { email } });
+
+  console.log("exUser" + exUser);
   if (exUser) {
     const result = await bcrypt.compare(password, exUser.password);
     if (result) {
       // id, pw가 맞다면..
       // access token과 refresh token을 발급합니다.
-      const accessToken = jwt.sign(exUser.id);
+      const tokenData = {
+        nick: exUser.nick,
+        role: exUser.role,
+      };
+      const accessToken = jwt.sign(tokenData);
       const refreshToken = jwt.refresh();
 
       // 발급한 refresh token을 redis에 key를 user의 id로 하여 저장합니다.
@@ -48,6 +56,11 @@ router.post("/login", async (req, res) => {
           accessToken,
           refreshToken,
         },
+      });
+    } else {
+      res.status(401).send({
+        ok: false,
+        message: "wrong password",
       });
     }
   } else {
