@@ -33,7 +33,7 @@ router.post("/login", async (req, res) => {
 
   const exUser = await User.findOne({ where: { email } });
 
-  console.log("exUser" + exUser);
+  console.log("exUser" + exUser.nick);
   if (exUser) {
     const result = await bcrypt.compare(password, exUser.password);
     if (result) {

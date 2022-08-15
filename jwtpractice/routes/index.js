@@ -2,9 +2,10 @@ const authJWT = require("./middlewares/authJWT");
 
 const router = require("express").Router();
 
-router.get("/userget", authJWT, (req, res, next) => {
+router.get("/getuser", authJWT, (req, res, next) => {
+  console.log(req.nick);
   if (req.nick) {
-    res.send(req.nick, req.role);
+    res.send({ nick: req.nick, role: req.role });
   }
 });
 
