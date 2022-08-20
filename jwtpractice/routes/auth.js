@@ -40,6 +40,7 @@ router.post("/login", async (req, res) => {
       // id, pw가 맞다면..
       // access token과 refresh token을 발급합니다.
       const tokenData = {
+        id: exUser.id,
         nick: exUser.nick,
         role: exUser.role,
       };
@@ -68,6 +69,20 @@ router.post("/login", async (req, res) => {
       ok: false,
       message: "없는 사용자입니다.",
     });
+  }
+});
+
+router.post("/getnewtoken", async (req, res, next) => {
+  try {
+    const token = req.headers.authorization.split("Bearer ")[1];
+    if (jwt.refreshVerify(token)) {
+      let userData = jwt.verify(token, process.env.JWT_SECRET);
+      let newToken = jwt.sign(userData);
+      return res.json({ refreshToken: newToken });
+    }
+  } catch (err) {
+    console.error(err);
+    return res.send("failed getNewToken");
   }
 });
 

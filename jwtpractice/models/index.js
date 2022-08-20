@@ -15,5 +15,8 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require("./user")(sequelize, Sequelize);
+db.Count = require("./count")(sequelize, Sequelize);
+
+db.Count.belongsTo(db.User);
 
 module.exports = db;
