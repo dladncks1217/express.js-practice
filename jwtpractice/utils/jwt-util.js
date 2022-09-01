@@ -1,6 +1,6 @@
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
-// const redisClient = require("./redis");
+const redisClient = require("./redis-util");
 require("dotenv").config();
 const secret = process.env.JWT_SECRET;
 
@@ -16,7 +16,7 @@ module.exports = {
     return jwt.sign(payload, secret, {
       // secret으로 sign하여 발급하고 return
       algorithm: "HS256", // 암호화 알고리즘
-      expiresIn: "1m", // 유효기간
+      expiresIn: "5m", // 유효기간
     });
   },
   verify: (token) => {

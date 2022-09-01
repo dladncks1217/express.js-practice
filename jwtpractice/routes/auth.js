@@ -44,18 +44,24 @@ router.post("/login", async (req, res) => {
         nick: exUser.nick,
         role: exUser.role,
       };
+
       const accessToken = jwt.sign(tokenData);
       const refreshToken = jwt.refresh();
 
       // 발급한 refresh token을 redis에 key를 user의 id로 하여 저장합니다.
       //   redisClient.set(user.id, refreshToken);
 
+      res.cookie("refreshToken", refreshToken, {
+        path: "/",
+        maxAge: 10080000,
+        httpOnly: true,
+      });
       res.status(200).send({
         // client에게 토큰 모두를 반환합니다.
         ok: true,
         data: {
           accessToken,
-          refreshToken,
+          // refreshToken,
         },
       });
     } else {
@@ -76,9 +82,15 @@ router.post("/getnewtoken", async (req, res, next) => {
   try {
     const token = req.headers.authorization.split("Bearer ")[1];
     if (jwt.refreshVerify(token)) {
-      let userData = jwt.verify(token, process.env.JWT_SECRET);
-      let newToken = jwt.sign(userData);
-      return res.json({ refreshToken: newToken });
+      const { userId } = req.body;
+      const exUser = await User.findOne({ where: { id: userId } });
+      let userData = {
+        id: exUser.id,
+        nick: exUser.nick,
+        role: exUser.role,
+      };
+      const newToken = jwt.sign(userData);
+      return res.json({ accessToken: newToken });
     }
   } catch (err) {
     console.error(err);
